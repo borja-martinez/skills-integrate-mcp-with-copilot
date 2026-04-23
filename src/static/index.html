@@ -10,6 +10,10 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div id="auth-section">
+        <span id="user-icon">👤</span>
+        <button id="logout-btn" class="hidden">Logout</button>
+      </div>
     </header>
 
     <main>
@@ -23,6 +27,7 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
+        <div id="auth-message">Login required to register students.</div>
         <form id="signup-form">
           <div class="form-group">
             <label for="email">Student Email:</label>
@@ -35,11 +40,30 @@
               <!-- Activity options will be loaded here -->
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit" id="signup-btn" disabled>Sign Up</button>
         </form>
         <div id="message" class="hidden"></div>
       </section>
     </main>
+
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+          </div>
+          <button type="submit">Login</button>
+          <button type="button" id="cancel-login">Cancel</button>
+        </form>
+        <div id="login-message"></div>
+      </div>
+    </div>
 
     <footer>
       <p>&copy; 2026 Mergington High School</p>
